@@ -21,3 +21,21 @@ botonCerrar.click(function() {
 modalCarrito.click(function(event) {
     event.stopPropagation()
 })
+
+const contenedorProductos = $('#contenedor-productos')
+console.log(contenedorProductos)
+
+const contenedorCarrito = $('#carrito-contenedor')
+console.log(contenedorCarrito)
+
+const contadorCarrito = $('#contadorCarrito')
+console.log(contadorCarrito)
+
+const precioTotal = $('#precioTotal')
+console.log(precioTotal)
+
+const carrito = []
+
+$(stockProductos).each(function(index, producto) => {
+
+})
