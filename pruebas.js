@@ -36,9 +36,39 @@ console.log(precioTotal)
 
 const carrito = []
 
-$(stockProductos).each(function(producto, index) => {
-    $('#contenedor-productos').append(`<div class="producto"><h3>${producto.nombre}</h3>
-                <img src=${producto.img} alt="">
-                <p class="precioProducto">Precio: $${producto.precio}</p>
-                <button onclick="agregarAlCarrito(${producto.id})" class="boton-agregar">Agregar al carrito <i class="fas fa-shopping-cart"></i></button></div>`)
+stockProductos.forEach((producto) => {
+    $('#contenedor-productos').append(`
+    <div class= "producto">
+        <h3>${producto.nombre}</h3>
+        <img src=${producto.img} alt="">
+        <p class="precioProducto">Precio: $${producto.precio}</p>
+        <button onclick="agregarAlCarrito(${producto.id})" class="boton-agregar">Agregar al carrito <i class="fas fa-shopping-cart"></i></button>
+    </div>
+    `)
 })
+
+const productosToString = JSON.stringify(stockProductos)
+
+localStorage.setItem('productos', productosToString)
+
+console.log(stockProductos)
+
+const agregarAlCarrito = (item) => {
+
+    const productoEnCarrito = carrito.find((prod) => prod.id === item)
+
+    if (productoEnCarrito) {
+        productoEnCarrito.cantidad++
+    } else {
+
+        const producto = stockProductos.find((prod) => prod.id === item)
+
+        carrito.push({ id: producto.id, nombre: producto.nombre, precio: producto.precio, cantidad: 1 })
+    }
+
+    console.log(carrito)
+    actualizarCarrito()
+}
+
+
+
