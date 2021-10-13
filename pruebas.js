@@ -70,5 +70,35 @@ const agregarAlCarrito = (item) => {
     actualizarCarrito()
 }
 
+const actualizarCarrito = () => {
+    $('#carrito-contenedor').html("")
 
+    carrito.forEach((prod) => {
+        $('#carrito-contenedor').append(
+            `
+            <div class= "productoEnCarrito">
+                <p>${prod.nombre}</p>
+                <p>Precio: $${prod.precio}</p>
+                <p>Cantidad: ${prod.cantidad}</p>
+                <button onclick="eliminarProducto(${prod.id})" class="boton-eliminar">-</button>
+            </div>
+             `
+        )
+    })
 
+    $('#contadorCarrito').html(carrito.reduce((acc, prod) => acc += prod.cantidad, 0))
+    $('#precioTotal').html(carrito.reduce((acc, prod) => acc += prod.precio * prod.cantidad, 0))
+}
+
+const eliminarProducto = (itemId) => {
+    const producto = carrito.find((prod) => prod.id === itemId)
+
+    producto.cantidad--
+
+        if (producto.cantidad === 0) {
+            const index = carrito.indexOf(producto)
+            carrito.splice(index, 1)
+        }
+
+    actualizarCarrito()
+}
