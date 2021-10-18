@@ -290,3 +290,36 @@ p {
     // font-weight: 1000;
     font-family: 'Bebas Neue';
 }
+
+
+/*MEDIA QUERIES*/
+
+@media (max-width: 425px) {
+    .producto {
+        width: 80%;
+        height: 100vh;
+        padding: 20px;
+        margin-bottom: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        background-color: rgb(190, 190, 190);
+        border-radius: 30px;
+    }
+    .boton-agregar i {
+        font-size: 30px;
+    }
+    img {
+        width: 90%;
+    }
+    .pie {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        background-color: rgb(161, 161, 161);
+        height: 40vh;
+        width: 100%;
+    }
+}
