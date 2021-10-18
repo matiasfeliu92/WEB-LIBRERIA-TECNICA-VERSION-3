@@ -322,4 +322,7 @@ p {
         height: 40vh;
         width: 100%;
     }
+    .presentacion {
+        height: 50vh;
+    }
 }
