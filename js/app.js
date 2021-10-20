@@ -1,7 +1,10 @@
 $('.boton-agregar').click(() => {
-    // alert('clickeaste el boton')
     $('body').toggleClass("dark-mode")
-    $('.tituloPagina').toggleClass("tituloWhite")
+        // $('.tituloPagina').toggleClass("tituloWhite")
+    $('header').toggleClass("fondoHeaderFooter")
+    $('header').addClass("dark-mode")
+    $('footer').toggleClass("fondoHeaderFooter")
+    $('footer').addClass("dark-mode")
 })
 
 $('#boton-carrito').click(() => {

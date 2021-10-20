@@ -32,6 +32,14 @@ p {
     font-size: 25px;
 }
 
+.dark-mode {
+    background-color: rgb(87, 87, 87);
+}
+
+.fondoHeaderFooter {
+    background-color: rgb(179, 179, 179);
+}
+
 .presentacion {
     position: fixed;
     background-color: white;
@@ -81,7 +89,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: rgb(179, 179, 179);
+    /* background-color: rgb(179, 179, 179); */
     padding: 20px 10%;
     margin-bottom: 20px;
 }
@@ -134,10 +142,6 @@ p {
     display: flex;
     justify-content: flex-end;
     padding-right: 20px;
-}
-
-.dark-mode {
-    background-color: rgb(87, 87, 87);
 }
 
 .producto {
@@ -281,7 +285,7 @@ p {
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
-    background-color: rgb(161, 161, 161);
+    /* background-color: rgb(161, 161, 161); */
     height: 20vh;
     width: 100%;
 }
