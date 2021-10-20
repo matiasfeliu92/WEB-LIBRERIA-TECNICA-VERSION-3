@@ -1,15 +1,3 @@
-$('#boton-carrito').click(() => {
-    $('.modal-contenedor').addClass('modal-active')
-})
-
-$('#carritoCerrar').click(() => {
-    $('.modal-contenedor').removeClass('modal-active')
-})
-
-$('.modal-carrito').click((event) => {
-    event.stopPropagation()
-})
-
 const carrito = []
 
 stockProductos.forEach((producto) => {
@@ -28,6 +16,8 @@ const productosToString = JSON.stringify(stockProductos)
 localStorage.setItem('productos', productosToString)
 
 console.log(stockProductos)
+
+////////////////////////////////////////////////////
 
 const agregarAlCarrito = (item) => {
 
